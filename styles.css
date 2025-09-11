@@ -27,6 +27,14 @@ body{
     border-radius: 30px;
 }
 
+.calculadora-grid > button[name="data-opera"],
+.calculadora-grid > button[name="data-igual"] {
+    background-color: rgba(200, 150, 255, .75); 
+}
+.calculadora-grid > button[name="data-delete"] {
+    background-color: rgba(255, 150, 150, .75); 
+}
+
 .output{
     grid-column: 1 / -1;
     background-color: rgba(0, 0, 0, .75);
@@ -51,5 +59,14 @@ body{
     background-color: rgba(255, 255, 255, .9);
 
 }
+.calculadora-grid > button[name="data-opera"]:hover,
+.calculadora-grid > button[name="data-igual"]:hover {
+    background-color: rgba(200, 150, 255, .9);
+}
+
+.calculadora-grid > button[name="data-delete"]:hover {
+    background-color: rgba(255, 150, 150, .9);
+}
+
 
 
