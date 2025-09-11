@@ -23,7 +23,7 @@ botonOpera.forEach(function(boton){
 
 botonDecimal.forEach(function(boton){
     boton.addEventListener('click', function(){
-        selectOperacion(boton.innerText);
+        selectDecimal();
     });
 });
 
@@ -56,11 +56,21 @@ function selectOperacion(op) {
     opeActual = '';
 }
 
+function selectDecimal() {
+    if (opeActual.includes('.')) return;
+    if (opeActual === '') {
+        opeActual = '0.';
+    } else {
+        opeActual = opeActual.toString() + '.';
+    }
+    actualizarDisplay();
+};
+
 function calcular() {
     let calculo;
     const anterior = parseFloat(opeAnterior);
     const actual =parseFloat(opeActual);
-    if(isNaN(opeAnterior) || isNaN(opeActual) || isNaN(result) || Infinity(result)return;
+    if(isNaN(opeAnterior) || isNaN(opeActual))return;
     switch (operacion) {
         case '+':
             calculo = anterior + actual
@@ -73,15 +83,33 @@ function calcular() {
             break;
         case '÷':
             calculo = anterior / actual
+            if (actual === 0) {
+                alert('Error: ¿cómo calculas la división por cero?');
+                clear();
+                actualizarDisplay();
+                return;
+            }
             break;   
         case '^':
-            calculo = anterior ^ actual
+            calculo = anterior ** actual
             break;    
         case 'mod':
-            calculo = anterior % actual
+            if (actual === 0) {
+                alert('Error: ¿cómo calculas el módulo por cero?');
+                clear();
+                actualizarDisplay();
+                return;
+            }
+            calculo = anterior % actual;
             break;    
         default:
             return;
+    }
+if (!isFinite(calculo)) {
+    alert('Al infinito y más allá');
+    clear();
+    actualizarDisplay();
+    return;
     }
     opeActual = calculo;
     operacion = undefined;
@@ -93,8 +121,8 @@ function clear(){
     opeAnterior = '';
     operacion = undefined;
 }
-
 clear();
+
 
 
 
