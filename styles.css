@@ -10,7 +10,7 @@ body{
     align-content: center;
     min-height: 80vh;
     grid-template-columns: repeat(5, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(4, 100px);
 }
 
 .calculadora-grid > button{
@@ -47,3 +47,4 @@ body{
     background-color: rgba(255, 255, 255, .9);
 
 }
+
