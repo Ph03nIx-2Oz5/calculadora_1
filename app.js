@@ -84,7 +84,7 @@ function calcular() {
         case '÷':
             calculo = anterior / actual
             if (actual === 0) {
-                alert('Error: ¿cómo calculas la división por cero?');
+                alert('Cualquiera, pues si la división es lo opuesto a la multiplicación, cualquier número multiplicado por 0 da 0');
                 clear();
                 actualizarDisplay();
                 return;
@@ -95,18 +95,20 @@ function calcular() {
             break;    
         case 'mod':
             if (actual === 0) {
-                alert('Error: ¿cómo calculas el módulo por cero?');
+                alert('Error: operación indefinida');
                 clear();
                 actualizarDisplay();
                 return;
             }
             calculo = anterior % actual;
-            break;    
+            break; 
+        case '%':
+            calculo = anterior / 100
         default:
             return;
     }
 if (!isFinite(calculo)) {
-    alert('Al infinito y más allá');
+    alert('Al infinito y más allá...');
     clear();
     actualizarDisplay();
     return;
