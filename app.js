@@ -1,5 +1,6 @@
 const botonNumeros = document.getElementsByName('data-number');
 const botonOpera = document.getElementsByName('data-opera');
+const botonDecimal = document.getElementsByName('data-decimal');
 const botonIgual = document.getElementsByName('data-igual')[0];
 const botonDelete = document.getElementsByName('data-delete')[0];
 
@@ -15,6 +16,12 @@ botonNumeros.forEach(function(boton){
 });
 
 botonOpera.forEach(function(boton){
+    boton.addEventListener('click', function(){
+        selectOperacion(boton.innerText);
+    });
+});
+
+botonDecimal.forEach(function(boton){
     boton.addEventListener('click', function(){
         selectOperacion(boton.innerText);
     });
@@ -53,7 +60,7 @@ function calcular() {
     let calculo;
     const anterior = parseFloat(opeAnterior);
     const actual =parseFloat(opeActual);
-    if(isNaN(opeAnterior) || isNaN(opeActual))return;
+    if(isNaN(opeAnterior) || isNaN(opeActual) || isNaN(result) || infinity(result)return;
     switch (operacion) {
         case '+':
             calculo = anterior + actual
@@ -66,6 +73,12 @@ function calcular() {
             break;
         case '÷':
             calculo = anterior / actual
+            break;    
+        case '^':
+            calculo = anterior ^ actual
+            break;    
+        case 'mod':
+            calculo = anterior % actual
             break;    
         default:
             return;
@@ -82,4 +95,5 @@ function clear(){
 }
 
 clear();
+
 
