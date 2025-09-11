@@ -60,7 +60,7 @@ function calcular() {
     let calculo;
     const anterior = parseFloat(opeAnterior);
     const actual =parseFloat(opeActual);
-    if(isNaN(opeAnterior) || isNaN(opeActual) || isNaN(result) || infinity(result)return;
+    if(isNaN(opeAnterior) || isNaN(opeActual) || isNaN(result) || Infinity(result)return;
     switch (operacion) {
         case '+':
             calculo = anterior + actual
@@ -73,7 +73,7 @@ function calcular() {
             break;
         case '÷':
             calculo = anterior / actual
-            break;    
+            break;   
         case '^':
             calculo = anterior ^ actual
             break;    
@@ -95,5 +95,6 @@ function clear(){
 }
 
 clear();
+
 
 
