@@ -66,6 +66,15 @@ function selectDecimal() {
     actualizarDisplay();
 };
 
+function calcularPorcentaje() {
+    if (opeActual === '') return;
+    const numero = parseFloat(opeActual);
+    if (isNaN(numero)) return;
+    
+    opeActual = numero / 100;
+    actualizarDisplay();
+}
+
 function calcular() {
     let calculo;
     const anterior = parseFloat(opeAnterior);
@@ -76,7 +85,7 @@ function calcular() {
             calculo = anterior + actual;
             break;
         case '-':
-            calculo = anterior - actual
+            calculo = anterior - actual;
             break;    
         case 'x':
             calculo = anterior * actual;
@@ -125,10 +134,3 @@ function clear(){
     operacion = undefined;
 }
 clear();
-
-
-
-
-
-
-
