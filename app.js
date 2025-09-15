@@ -103,7 +103,7 @@ function calcular() {
             calculo = anterior % actual;
             break; 
         case '%':
-            calculo = anterior * (actual / 100);
+            calculo = anterior / 100;
             break; 
         default:
             return;
@@ -125,6 +125,7 @@ function clear(){
     operacion = undefined;
 }
 clear();
+
 
 
 
