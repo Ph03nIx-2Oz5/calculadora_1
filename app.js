@@ -70,28 +70,28 @@ function calcular() {
     let calculo;
     const anterior = parseFloat(opeAnterior);
     const actual =parseFloat(opeActual);
-    if(isNaN(opeAnterior) || isNaN(opeActual))return;
+    if(isNaN(anterior) || isNaN(actual))return;
     switch (operacion) {
         case '+':
-            calculo = anterior + actual
+            calculo = anterior + actual;
             break;
         case '-':
             calculo = anterior - actual
             break;    
         case 'x':
-            calculo = anterior * actual
+            calculo = anterior * actual;
             break;
         case '÷':
-            calculo = anterior / actual
             if (actual === 0) {
                 alert('Cualquiera, pues si la división es lo opuesto a la multiplicación, cualquier número multiplicado por 0 da 0');
                 clear();
                 actualizarDisplay();
-                return;
+                return;                 
             }
+            calculo = anterior / actual;
             break;   
         case '^':
-            calculo = anterior ** actual
+            calculo = anterior ** actual;
             break;    
         case 'mod':
             if (actual === 0) {
@@ -103,7 +103,8 @@ function calcular() {
             calculo = anterior % actual;
             break; 
         case '%':
-            calculo = anterior * (actual / 100)
+            calculo = anterior * (actual / 100);
+            break; 
         default:
             return;
     }
@@ -124,6 +125,7 @@ function clear(){
     operacion = undefined;
 }
 clear();
+
 
 
 
